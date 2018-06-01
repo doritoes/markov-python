@@ -81,7 +81,7 @@ class Markov:
 
     def ask(self, seed):
         """Queries the Markov chain with the seed of your choice (make sure it is an n-element list/tuple where n is the order of the chain)."""
-        tmp = seed
+        tmp = tuple(seed)
         if not tmp in self.states:
             tmp = self.init_chain()
         t = self.states[tmp][random.randint(0, len(self.states[tmp])-1)]
